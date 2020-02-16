@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed = 4f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,21 @@ public class Enemy : MonoBehaviour
         if (transform.position.y <= -8)
         {
             transform.position = new Vector3(Random.Range(-9f, 9f), 8f, 0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.transform.name);
+        // other = player, destroy me and damage player
+        if (other.tag == "Player")
+        {
+            Destroy(this.gameObject);
+        }
+        else if (other.tag == "Laser")
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
