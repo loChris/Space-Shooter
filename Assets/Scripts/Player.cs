@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed = 10f;
+    [SerializeField] private float _fireRate = 0.1f;
+    private float _canShoot = -1f;
     [SerializeField] private GameObject _laserPrefab;
 
     // Start is called before the first frame update
@@ -44,11 +46,10 @@ public class Player : MonoBehaviour
 
     void LaserFiring()
     {
-        // if I hit space key
-        // spawn game object
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        // if the player presses or hold space, instantiate a laser 1 unit above the player
+        if (Input.GetKey(KeyCode.Space) && Time.time > _canShoot)
         {
+            _canShoot = Time.time + _fireRate;
             Instantiate(_laserPrefab, new Vector3(transform.position.x, transform.position.y + 1, 0), Quaternion.identity);
         }
     }
