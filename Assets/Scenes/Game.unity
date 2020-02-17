@@ -155,7 +155,7 @@ MonoBehaviour:
   _speed: 10
   _fireRate: 0.25
   _lives: 3
-  _laserPrefab: {fileID: 7946303669006510627, guid: e326e700b9d2888458765b7c55feea05,
+  _laserPrefab: {fileID: 6699084976488110871, guid: e326e700b9d2888458765b7c55feea05,
     type: 3}
 --- !u!212 &5923476
 SpriteRenderer:
