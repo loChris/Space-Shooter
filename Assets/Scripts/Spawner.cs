@@ -5,7 +5,9 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private GameObject _enemyContainer;
     [SerializeField] private float _spawnTimer = 5f;
+    private bool _playerAlive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +22,17 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnRoutine()
     {
-        while (true)
+        while (_playerAlive == true)
         {
             Vector3 spawnPos = new Vector3(Random.Range(-9f, 9f), 8f, 0);
-            Instantiate(_enemyPrefab, spawnPos, Quaternion.identity);
+            GameObject newEnemy = Instantiate(_enemyPrefab, spawnPos, Quaternion.identity);
+            newEnemy.transform.parent = _enemyContainer.transform;
             yield return new WaitForSeconds(_spawnTimer);
         }
+    }
+
+    public void OnPlayerDeath()
+    {
+        _playerAlive = false;
     }
 }
