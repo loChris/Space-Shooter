@@ -5,12 +5,7 @@ using UnityEngine;
 public class Powerup : MonoBehaviour
 {
     [SerializeField] private float _speed = 3f;
-    //ID for Powerups
-    // 0 = tripleshot
-    // 1 = speed
-    // 2 = shields
-
-    [SerializeField] private int powerupID;
+    [SerializeField] private int powerupID; // ID 0 = tripleshot, 1 = speed, 2 = shield
 
     // Update is called once per frame
     void Update()
@@ -35,14 +30,14 @@ public class Powerup : MonoBehaviour
             // check if not null to avoid crashes
             if (player != null)
             {
-                // call method from player script and destroy this object
-                if (powerupID == 0)
+                switch (powerupID)
                 {
-                    player.TripleShotActive();
-                }
-                else if (powerupID == 1)
-                {
-                    player.SpeedBoostActive();
+                    case 0:
+                        player.TripleShotActive();
+                        break;
+                    case 1:
+                        player.SpeedBoostActive();
+                        break;
                 }
                 Destroy(this.gameObject);
             }

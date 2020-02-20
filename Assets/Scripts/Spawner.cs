@@ -5,9 +5,9 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject _enemyPrefab;
-    [SerializeField] private GameObject _powerupPrefab;
+    // [SerializeField] private GameObject _powerupPrefab;
     [SerializeField] private GameObject _enemyContainer;
-    [SerializeField] private GameObject _powerupContainer;
+    [SerializeField] private GameObject[] _powerups;
     [SerializeField] private float _spawnTimer = 5f;
     private bool _playerAlive = true;
 
@@ -23,11 +23,11 @@ public class Spawner : MonoBehaviour
         //every 3 - 7 seconds spawn a powerup
         while (_playerAlive == true)
         {
+            int randomPowerup = Random.Range(0, 2);
             // random spawn location between 2 values
             Vector3 spawnPos = new Vector3(Random.Range(-9f, 9f), 8f, 0);
             //instatiate new gameobject and place it inside a parent container
-            GameObject newPowerup = Instantiate(_powerupPrefab, spawnPos, Quaternion.identity);
-            newPowerup.transform.parent = _powerupContainer.transform;
+            GameObject newPowerup = Instantiate(_powerups[randomPowerup], spawnPos, Quaternion.identity);
             // wait a random amount of time between two values before starting routine again
             yield return new WaitForSeconds(Random.Range(3f, 8f));
         }

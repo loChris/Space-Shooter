@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed = 10f;
+    [SerializeField] private float _speedMultiplier = 2;
     [SerializeField] private float _fireRate = 0.5f;
     [SerializeField] private float _laserPos = 0.8f;
     [SerializeField] private float _tripleShotTimer = 5f;
@@ -39,9 +40,16 @@ public class Player : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+        Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
 
-        transform.Translate(Vector3.right * horizontalInput * _speed * Time.deltaTime);
-        transform.Translate(Vector3.up * verticalInput * _speed * Time.deltaTime);
+        if (_isSpeedBoostActive == true)
+        {
+            transform.Translate(direction * _speed * _speedMultiplier * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(direction * _speed * Time.deltaTime);
+        }
 
         // limit vertical player movement
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.5f, 0), 0);
@@ -103,8 +111,7 @@ public class Player : MonoBehaviour
 
     public void SpeedBoostActive()
     {
-        _speed = 15f;
-        _fireRate = .15f;
+        _isSpeedBoostActive = true;
         StartCoroutine(SpeedBoostPowerDown());
     }
 
