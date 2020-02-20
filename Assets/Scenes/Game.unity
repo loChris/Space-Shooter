@@ -155,8 +155,9 @@ MonoBehaviour:
   _speed: 10
   _fireRate: 0.25
   _laserPos: 0.8
+  _tripleShotTimer: 5
   _lives: 3
-  _isTripleShotActive: 1
+  _isTripleShotActive: 0
   _laserPrefab: {fileID: 6699084976488110871, guid: e326e700b9d2888458765b7c55feea05,
     type: 3}
   _tripleShotPrefab: {fileID: 7272344765139096762, guid: 15edd629488a65c4f974221012efc1a1,
@@ -334,6 +335,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &58036055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5753699352027574054, guid: bdc0a60a9f805614e8ba063b252dd7b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 9216358567921078481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &58036061
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58036055}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e118d3062c4e57b4185894a9b5fd5ae6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1159843876
 GameObject:
   m_ObjectHideFlags: 0
