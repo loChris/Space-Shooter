@@ -153,11 +153,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
+  _speedMultiplier: 2
   _fireRate: 0.25
   _laserPos: 0.8
   _tripleShotTimer: 5
   _lives: 3
   _isTripleShotActive: 0
+  _isSpeedBoostActive: 0
   _laserPrefab: {fileID: 6699084976488110871, guid: e326e700b9d2888458765b7c55feea05,
     type: 3}
   _tripleShotPrefab: {fileID: 7272344765139096762, guid: 15edd629488a65c4f974221012efc1a1,
@@ -539,10 +541,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 7486982413796434541, guid: 3f396f72645a0ea4eaecda94848fd45f,
     type: 3}
-  _powerupPrefab: {fileID: 5753699352027574054, guid: bdc0a60a9f805614e8ba063b252dd7b6,
-    type: 3}
   _enemyContainer: {fileID: 1833667278}
-  _powerupContainer: {fileID: 1840229242}
+  _powerups:
+  - {fileID: 5753699352027574054, guid: bdc0a60a9f805614e8ba063b252dd7b6, type: 3}
+  - {fileID: 4906822130783969075, guid: 6a1c412971ac4cb41b2fe01cfbb1d6f9, type: 3}
+  - {fileID: 0}
   _spawnTimer: 5
 --- !u!4 &1549418595
 Transform:
@@ -556,7 +559,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1833667279}
-  - {fileID: 1840229243}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -589,34 +591,4 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1549418595}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1840229242
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1840229243}
-  m_Layer: 0
-  m_Name: Powerup Container
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1840229243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840229242}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1549418595}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
