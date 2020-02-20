@@ -19,13 +19,21 @@ public class Powerup : MonoBehaviour
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
 
         // when we leave the screen, destoy me
-        if (transform.position.y <= -4f)
+        if (transform.position.y <= -8f)
         {
             Destroy(this.gameObject);
         }
     }
 
-    // ontrigger collison
-    // only be collectable by the player
-    //on collected, destroy and turn bool variable ino true
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            Player player = other.transform.GetComponent<Player>();
+            if (player != null)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+    }
 }
