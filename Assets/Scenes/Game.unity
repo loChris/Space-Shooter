@@ -545,7 +545,7 @@ MonoBehaviour:
   _powerups:
   - {fileID: 5753699352027574054, guid: bdc0a60a9f805614e8ba063b252dd7b6, type: 3}
   - {fileID: 4906822130783969075, guid: 6a1c412971ac4cb41b2fe01cfbb1d6f9, type: 3}
-  - {fileID: 0}
+  - {fileID: 624755133334278227, guid: b71514c13b57a5e4097f6644b8779753, type: 3}
   _spawnTimer: 5
 --- !u!4 &1549418595
 Transform:

@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
         //every 3 - 7 seconds spawn a powerup
         while (_playerAlive == true)
         {
-            int randomPowerup = Random.Range(0, 2);
+            int randomPowerup = Random.Range(0, 3);
             // random spawn location between 2 values
             Vector3 spawnPos = new Vector3(Random.Range(-9f, 9f), 8f, 0);
             //instatiate new gameobject and place it inside a parent container
