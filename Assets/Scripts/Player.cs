@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _tripleShotTimer = 5f;
     [SerializeField] private int _lives = 3;
     [SerializeField] private bool _isTripleShotActive = false;
+    [SerializeField] private bool _isSpeedBoostActive = false;
     private float _canShoot = -1f;
     private Spawner _spawnManager;
     [SerializeField] private GameObject _laserPrefab;
@@ -97,6 +98,22 @@ public class Player : MonoBehaviour
         {
             yield return new WaitForSeconds(_tripleShotTimer);
             _isTripleShotActive = false;
+        }
+    }
+
+    public void SpeedBoostActive()
+    {
+        _speed = 15f;
+        _fireRate = .15f;
+        StartCoroutine(SpeedBoostPowerDown());
+    }
+
+    IEnumerator SpeedBoostPowerDown()
+    {
+        while (_isSpeedBoostActive == true)
+        {
+            yield return new WaitForSeconds(_tripleShotTimer);
+            _isSpeedBoostActive = false;
         }
     }
 }
