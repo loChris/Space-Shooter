@@ -18,19 +18,17 @@ public class Spawner : MonoBehaviour
         StartCoroutine(SpawnPowerupRoutine());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     IEnumerator SpawnPowerupRoutine()
     {
         //every 3 - 7 seconds spawn a powerup
         while (_playerAlive == true)
         {
+            // random spawn location between 2 values
             Vector3 spawnPos = new Vector3(Random.Range(-9f, 9f), 8f, 0);
+            //instatiate new gameobject and place it inside a parent container
             GameObject newPowerup = Instantiate(_powerupPrefab, spawnPos, Quaternion.identity);
             newPowerup.transform.parent = _powerupContainer.transform;
+            // wait a random amount of time between two values before starting routine again
             yield return new WaitForSeconds(Random.Range(3f, 8f));
         }
     }
