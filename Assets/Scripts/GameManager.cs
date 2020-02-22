@@ -9,11 +9,16 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //if the r key was pressed restart current scene
-        if (Input.GetKeyDown(KeyCode.R) && _isGameOver == true)
-            SceneManager.LoadScene(0); //current game scene
+        if (_isGameOver == true)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+                SceneManager.LoadScene(1); //current game scene
 
+            if (Input.GetKeyDown(KeyCode.Q))
+                SceneManager.LoadScene(0);
+        }
     }
+
     public void GameOver()
     {
         _isGameOver = true;

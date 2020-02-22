@@ -1086,7 +1086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1897430865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1137,7 +1137,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press the 'R' key to restart the level
+  m_Text: 'Press the ''R'' key to restart the level
+
+    Press the ''Q'' key to quit'
 --- !u!222 &1897430867
 CanvasRenderer:
   m_ObjectHideFlags: 0
