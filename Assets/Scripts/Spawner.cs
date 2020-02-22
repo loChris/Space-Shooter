@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject _enemyPrefab;
-    // [SerializeField] private GameObject _powerupPrefab;
     [SerializeField] private GameObject _enemyContainer;
     [SerializeField] private GameObject[] _powerups;
     [SerializeField] private float _spawnTimer = 5f;
