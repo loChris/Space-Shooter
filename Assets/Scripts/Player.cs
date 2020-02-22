@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _laserPos = 0.8f;
     [SerializeField] private float _tripleShotTimer = 5f;
     [SerializeField] private int _lives = 3;
+    [SerializeField] private int _score;
     [SerializeField] private bool _isTripleShotActive = false;
     [SerializeField] private bool _isSpeedBoostActive = false;
     [SerializeField] private bool _isShieldActive = false;
@@ -18,16 +19,23 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _laserPrefab;
     [SerializeField] private GameObject _tripleShotPrefab;
     [SerializeField] private GameObject _shieldVisualizer;
+    private UIManager _uiManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         transform.position = new Vector3(0, 0, 0);
         _spawnManager = GameObject.Find("Spawner").GetComponent<Spawner>();
         if (_spawnManager == null)
         {
             Debug.LogError("spawn manager error");
+        }
+
+        if (_uiManager == null)
+        {
+            Debug.LogError("UI manager is null");
         }
     }
 
@@ -145,4 +153,12 @@ public class Player : MonoBehaviour
             _shieldVisualizer.SetActive(false);
         }
     }
+
+    //method to add 10 to the score
+    public void ScorePoint(int points)
+    {
+        _score += points;
+        _uiManager.UpdateScoreOnScreen(_score);
+    }
+    //commincate with the UI to update score
 }

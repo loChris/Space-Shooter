@@ -158,6 +158,7 @@ MonoBehaviour:
   _laserPos: 0.8
   _tripleShotTimer: 5
   _lives: 3
+  _score: 0
   _isTripleShotActive: 0
   _isSpeedBoostActive: 0
   _isShieldActive: 0
@@ -408,7 +409,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 10'
+  m_Text: 
 --- !u!222 &203724464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -638,7 +639,7 @@ MonoBehaviour:
   - {fileID: 5753699352027574054, guid: bdc0a60a9f805614e8ba063b252dd7b6, type: 3}
   - {fileID: 4906822130783969075, guid: 6a1c412971ac4cb41b2fe01cfbb1d6f9, type: 3}
   - {fileID: 624755133334278227, guid: b71514c13b57a5e4097f6644b8779753, type: 3}
-  _spawnTimer: 5
+  _spawnTimer: 2
 --- !u!4 &1549418595
 Transform:
   m_ObjectHideFlags: 0
@@ -762,6 +763,7 @@ GameObject:
   - component: {fileID: 1855796466}
   - component: {fileID: 1855796465}
   - component: {fileID: 1855796464}
+  - component: {fileID: 1855796468}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -849,49 +851,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1917815384
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1917815386}
-  - component: {fileID: 1917815385}
-  m_Layer: 0
-  m_Name: UI_Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1917815385
+--- !u!114 &1855796468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917815384}
+  m_GameObject: {fileID: 1855796463}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cbc6c4647ff8634d80a341a60a19e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1917815386
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917815384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2205276, y: 0.53147715, z: -4.861328}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  _scoreText: {fileID: 203724463}
 --- !u!1001 &5628177048718491902
 PrefabInstance:
   m_ObjectHideFlags: 0
