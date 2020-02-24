@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _laserPrefab;
     [SerializeField] private GameObject _tripleShotPrefab;
     [SerializeField] private GameObject _shieldVisualizer;
+    [SerializeField] private GameObject _rightDamageVisualizer;
+    [SerializeField] private GameObject _leftDamageVisualizer;
     private UIManager _uiManager;
 
 
@@ -99,8 +101,15 @@ public class Player : MonoBehaviour
         {
             _lives--;
             _uiManager.UpdateLives(_lives);
-
-            if (_lives < 1)
+            if (_lives == 2)
+            {
+                _rightDamageVisualizer.SetActive(true);
+            }
+            else if (_lives == 1)
+            {
+                _leftDamageVisualizer.SetActive(true);
+            }
+            else if (_lives < 1)
             {
                 _spawnManager.OnPlayerDeath();
                 Destroy(this.gameObject);
