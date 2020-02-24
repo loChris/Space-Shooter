@@ -10,8 +10,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float _spawnTimer = 2f;
     private bool _playerAlive = true;
 
-    // Start is called before the first frame update
-    void Start()
+    public void StartSpawning()
     {
         StartCoroutine(SpawnEnemyRoutine());
         StartCoroutine(SpawnPowerupRoutine());
@@ -19,7 +18,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnPowerupRoutine()
     {
-        //every 3 - 7 seconds spawn a powerup
+        yield return new WaitForSeconds(2);
         while (_playerAlive == true)
         {
             int randomPowerup = Random.Range(0, 3);
@@ -34,6 +33,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnEnemyRoutine()
     {
+        yield return new WaitForSeconds(2);
         while (_playerAlive == true)
         {
             Vector3 spawnPos = new Vector3(Random.Range(-9f, 9f), 8f, 0);
