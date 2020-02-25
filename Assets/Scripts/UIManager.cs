@@ -5,15 +5,13 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    //create a handle to Text
     [SerializeField] private Text _scoreText;
-    [SerializeField] private Image _livesImg;
-    [SerializeField] private Sprite[] _livesSprites;
     [SerializeField] private Text _gameOverText;
     [SerializeField] private Text _restartText;
+    [SerializeField] private Sprite[] _livesSprites;
+    [SerializeField] private Image _livesImg;
     private GameManager _gameManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();

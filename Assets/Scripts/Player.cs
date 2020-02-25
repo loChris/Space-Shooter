@@ -9,23 +9,21 @@ public class Player : MonoBehaviour
     [SerializeField] private float _fireRate = 0.5f;
     [SerializeField] private float _laserPos = 0.8f;
     [SerializeField] private float _tripleShotTimer = 5f;
+    private float _canShoot = -1f;
     [SerializeField] private int _lives = 3;
     [SerializeField] private int _score;
     [SerializeField] private bool _isTripleShotActive = false;
     [SerializeField] private bool _isSpeedBoostActive = false;
     [SerializeField] private bool _isShieldActive = false;
-    private float _canShoot = -1f;
     private Spawner _spawnManager;
     [SerializeField] private GameObject _laserPrefab;
     [SerializeField] private GameObject _tripleShotPrefab;
     [SerializeField] private GameObject _shieldVisualizer;
     [SerializeField] private GameObject _rightDamageVisualizer;
     [SerializeField] private GameObject _leftDamageVisualizer;
-    //variable to store audio clip
     [SerializeField] private AudioSource _laserSound;
     private UIManager _uiManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
@@ -38,7 +36,6 @@ public class Player : MonoBehaviour
             Debug.LogError("UI manager is null");
     }
 
-    // Update is called once per frame
     void Update()
     {
         CalculateMovement();
@@ -89,7 +86,6 @@ public class Player : MonoBehaviour
             {
                 Instantiate(_laserPrefab, new Vector3(transform.position.x, transform.position.y + _laserPos, 0), Quaternion.identity);
             }
-            //play the laser audio clip
             _laserSound.Play();
         }
     }
@@ -167,7 +163,7 @@ public class Player : MonoBehaviour
     public void ScorePoint(int points)
     {
         _score += points;
+        //commincate with the UI to update score
         _uiManager.UpdateScoreOnScreen(_score);
     }
-    //commincate with the UI to update score
 }

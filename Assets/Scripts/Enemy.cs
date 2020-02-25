@@ -8,9 +8,7 @@ public class Enemy : MonoBehaviour
     private Player _player;
     private Animator _anim;
     private AudioSource _explosionSound;
-    //handle to animator component
 
-    // Start is called before the first frame update
     void Start()
     {
         _explosionSound = GetComponent<AudioSource>();
@@ -23,7 +21,6 @@ public class Enemy : MonoBehaviour
             Debug.LogError("animator is null");
     }
 
-    // Update is called once per frame
     void Update()
     {
         //move down at 4 meters per second
@@ -57,7 +54,6 @@ public class Enemy : MonoBehaviour
                 _player.ScorePoint(10);
                 _explosionSound.Play();
             }
-            // and here
             _anim.SetTrigger("OnEnemyDeath");
             _speed = 0;
             Destroy(this.gameObject, 2.8f);

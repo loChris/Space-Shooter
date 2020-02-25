@@ -14,7 +14,6 @@ public class Astroid : MonoBehaviour
         _spawnManager = GameObject.Find("Spawner").GetComponent<Spawner>();
         _explosionSound = GetComponent<AudioSource>();
     }
-    // Update is called once per frame
     void Update()
     {
         transform.Rotate(Vector3.forward * _speed * Time.deltaTime);

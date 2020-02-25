@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
         if (_isGameOver == true)
         {
             if (Input.GetKeyDown(KeyCode.R))
-                SceneManager.LoadScene(1); //current game scene
+                SceneManager.LoadScene(1); //main game scene
 
             if (Input.GetKeyDown(KeyCode.Q))
                 SceneManager.LoadScene(0);
