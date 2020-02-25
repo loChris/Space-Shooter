@@ -6,8 +6,8 @@ public class Powerup : MonoBehaviour
 {
     [SerializeField] private float _speed = 3f;
     [SerializeField] private int powerupID; // ID 0 = tripleshot, 1 = speed, 2 = shield
+    [SerializeField] private AudioClip _powerupClip;
 
-    // Update is called once per frame
     void Update()
     {
         // powerup moves down at a variable speed
@@ -26,6 +26,8 @@ public class Powerup : MonoBehaviour
         {
             // getting the player component for script communication
             Player player = other.transform.GetComponent<Player>();
+
+            AudioSource.PlayClipAtPoint(_powerupClip, transform.position);
 
             // check if not null to avoid crashes
             if (player != null)
