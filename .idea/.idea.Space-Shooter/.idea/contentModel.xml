@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Christian\.Rider2019.3\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\Christian\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Christian\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Space-Shooter.-752682063.00" t="ExcludeRecursive" />
+    <e p="D:\Unity Projects\Space-Shooter" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Astroid.cs" t="Include" />
+          <e p="Enemy.cs" t="Include" />
+          <e p="Explosion.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="Laser.cs" t="Include" />
+          <e p="Main_Menu" t="Include">
+            <e p="MainMenu.cs" t="Include" />
+          </e>
+          <e p="Player.cs" t="Include" />
+          <e p="Powerup.cs" t="Include" />
+          <e p="Spawner.cs" t="Include" />
+          <e p="UIManager.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Space-Shooter.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
