@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private Text _scoreText;
     [SerializeField] private Text _gameOverText;
-    [SerializeField] private Text _restartText;
+    [SerializeField] private GameObject _deathScreenText;
     [SerializeField] private Sprite[] _livesSprites;
     [SerializeField] private Image _livesImg;
     private GameManager _gameManager;
@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
         }
         _scoreText.text = "Score: " + 0;
         _gameOverText.gameObject.SetActive(false);
-        _restartText.gameObject.SetActive(false);
+        _deathScreenText.gameObject.SetActive(false);
     }
 
     public void UpdateScoreOnScreen(int playerScore)
@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
             _gameManager.GameOver();
             _gameOverText.gameObject.SetActive(true);
             StartCoroutine(GameOverFlickerRoutine());
-            _restartText.gameObject.SetActive(true);
+            _deathScreenText.gameObject.SetActive(true);
         }
     }
 
