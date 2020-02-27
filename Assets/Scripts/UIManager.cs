@@ -29,9 +29,9 @@ public class UIManager : MonoBehaviour
         _scoreText.text = "Score: " + playerScore;
     }
 
-    public void UpdateLives(int currentLives)
+    public void UpdateLives(float currentLives)
     {
-        _livesImg.sprite = _livesSprites[currentLives];
+        _livesImg.sprite = _livesSprites[(int) currentLives];
         if (currentLives <= 0)
         {
             _gameManager.GameOver();

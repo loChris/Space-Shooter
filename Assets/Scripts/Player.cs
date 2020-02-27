@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _laserPos = 0.8f;
     [SerializeField] private float _tripleShotTimer = 5f;
     private float _canShoot = -1f;
-    [SerializeField] private int _lives = 3;
+    [SerializeField] private float _lives = 3f;
     [SerializeField] private int _score;
     [SerializeField] private bool _isTripleShotActive = false;
     [SerializeField] private bool _isSpeedBoostActive = false;
@@ -90,11 +90,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Damage()
+    public void Damage(float damageTaken)
     {
         if (_isShieldActive == false)
         {
-            _lives--;
+            _lives -= damageTaken;
             _uiManager.UpdateLives(_lives);
             if (_lives == 2)
             {
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
             {
                 _leftDamageVisualizer.SetActive(true);
             }
-            else if (_lives < 1)
+            else if (_lives <= 0)
             {
                 _spawnManager.OnPlayerDeath();
                 Destroy(this.gameObject);
