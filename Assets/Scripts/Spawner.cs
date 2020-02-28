@@ -22,10 +22,13 @@ public class Spawner : MonoBehaviour
         while (_playerAlive == true)
         {
             int randomPowerup = Random.Range(0, 3);
+            
             // random spawn location between 2 values
             Vector3 spawnPos = new Vector3(Random.Range(-9f, 9f), 8f, 0);
+            
             //instatiate new gameobject and place it inside a parent container
             GameObject newPowerup = Instantiate(_powerups[randomPowerup], spawnPos, Quaternion.identity);
+            
             // wait a random amount of time between two values before starting routine again
             yield return new WaitForSeconds(Random.Range(3f, 8f));
         }

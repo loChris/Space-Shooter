@@ -23,23 +23,35 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _leftDamageVisualizer;
     [SerializeField] private AudioSource _laserSound;
     private UIManager _uiManager;
+    private GameManager _gameManager;
 
     void Start()
     {
-        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        transform.position = new Vector3(0, 0, 0);
-        _spawnManager = GameObject.Find("Spawner").GetComponent<Spawner>();
-        if (_spawnManager == null)
-            Debug.LogError("spawn manager error");
-
-        if (_uiManager == null)
-            Debug.LogError("UI manager is null");
+        AccessGameObjects();
+        
+        if (_gameManager.isCoopMode == false)
+            transform.position = new Vector3(0, 0, 0);
     }
 
     void Update()
     {
         CalculateMovement();
         LaserFiring();
+    }
+
+    void AccessGameObjects()
+    {
+        _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
+        if(_gameManager == null)
+            Debug.LogError("GameManager is null");
+            
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        if (_uiManager == null)
+            Debug.LogError("UI manager is null");
+        
+        _spawnManager = GameObject.Find("Spawner").GetComponent<Spawner>();
+        if (_spawnManager == null)
+            Debug.LogError("spawn manager error");
     }
 
     void CalculateMovement()
@@ -49,26 +61,18 @@ public class Player : MonoBehaviour
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
 
         if (_isSpeedBoostActive == true)
-        {
             transform.Translate(direction * _speed * _speedMultiplier * Time.deltaTime);
-        }
         else
-        {
             transform.Translate(direction * _speed * Time.deltaTime);
-        }
 
         // limit vertical player movement
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3.5f, 0), 0);
 
         // limit horizontal player movement and loop him around
         if (transform.position.x >= 11.2f)
-        {
             transform.position = new Vector3(-11.2f, transform.position.y, 0);
-        }
         else if (transform.position.x <= -11.2f)
-        {
             transform.position = new Vector3(11.2f, transform.position.y, 0);
-        }
     }
 
     void LaserFiring()
@@ -79,13 +83,10 @@ public class Player : MonoBehaviour
             _canShoot = Time.time + _fireRate;
 
             if (_isTripleShotActive == true)
-            {
                 Instantiate(_tripleShotPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-            }
             else
-            {
                 Instantiate(_laserPrefab, new Vector3(transform.position.x, transform.position.y + _laserPos, 0), Quaternion.identity);
-            }
+            
             _laserSound.Play();
         }
     }
