@@ -11,13 +11,7 @@
           <e p="UI-Default-No-Alpha.shader" t="Include" />
         </e>
         <e p="Scripts" t="Include">
-          <e p="ActiveStateToggler.cs" t="Include" />
-          <e p="ApplicationManager.cs" t="Include" />
           <e p="Astroid.cs" t="Include" />
-          <e p="ChangeColor.cs" t="Include" />
-          <e p="DragMe.cs" t="Include" />
-          <e p="DragPanel.cs" t="Include" />
-          <e p="DropMe.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="Explosion.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
@@ -28,11 +22,7 @@
           <e p="PanelManager.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Powerup.cs" t="Include" />
-          <e p="ResizePanel.cs" t="Include" />
-          <e p="ScrollDetailTexture.cs" t="Include" />
-          <e p="ShowSliderValue.cs" t="Include" />
           <e p="Spawner.cs" t="Include" />
-          <e p="TiltWindow.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />
         </e>
         <e p="Sprites" t="Include">

@@ -8,9 +8,28 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private bool _isGameOver = false;
     public bool isCoopMode = false;
+    [SerializeField] private GameObject _pauseMenu;
+    
+    private void Start()
+    {
+        HidePauseMenu();
+    }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                ShowPauseMenu();
+            } else if (Time.timeScale == 0)
+            {
+                Debug.Log("hmph");
+                HidePauseMenu();
+            }
+        }
+        
         if (_isGameOver == true)
         {
             if (Input.GetKeyDown(KeyCode.R))
@@ -25,5 +44,17 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         _isGameOver = true;
+    }
+
+    void HidePauseMenu()
+    {
+        _pauseMenu.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    void ShowPauseMenu()
+    {
+        _pauseMenu.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
 }
