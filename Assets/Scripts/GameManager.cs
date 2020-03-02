@@ -9,9 +9,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool _isGameOver = false;
     public bool isCoopMode = false;
     [SerializeField] private GameObject _pauseMenu;
+    private Animator _pauseAnimator;
     
     private void Start()
     {
+        _pauseAnimator = GameObject.Find("Pause_Menu_panel").GetComponent<Animator>();
+        _pauseAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
         HidePauseMenu();
     }
 
@@ -19,14 +22,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (Time.timeScale == 1)
+            switch (Time.timeScale)
             {
-                Time.timeScale = 0;
-                ShowPauseMenu();
-            } else if (Time.timeScale == 0)
-            {
-                Debug.Log("hmph");
-                HidePauseMenu();
+                case 1:
+                    ShowPauseMenu();
+                    break;
+                case 0:
+                    HidePauseMenu();
+                    break;
             }
         }
         
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
     void ShowPauseMenu()
     {
         _pauseMenu.gameObject.SetActive(true);
+        _pauseAnimator.SetBool("isPaused", true);
         Time.timeScale = 0;
     }
 }

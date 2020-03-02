@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a72e935-a56f-4eb3-b758-015b46eb47bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Single_Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Single_Player.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Space-Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Space-Shooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +35,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Main_Menu/MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -67,7 +68,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -98,7 +99,8 @@
       <workItem from="1582743651509" duration="5362000" />
       <workItem from="1582848523935" duration="2531000" />
       <workItem from="1583086211325" duration="1246000" />
-      <workItem from="1583184971472" duration="1721000" />
+      <workItem from="1583184971472" duration="2826000" />
+      <workItem from="1583188143477" duration="820000" />
     </task>
     <servers />
   </component>
@@ -121,13 +123,13 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2381" y="162" key="SettingsEditor" timestamp="1583185926566">
+    <state x="2381" y="162" key="SettingsEditor" timestamp="1583188405069">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1583185926566" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582747072921">
+    <state x="2381" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1583188405069" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583187131676">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582747072921" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1583187131676" />
   </component>
 </project>
