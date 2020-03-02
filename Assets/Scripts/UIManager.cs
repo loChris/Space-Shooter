@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite[] _livesSprites;
     [SerializeField] private Image _livesImg;
     private GameManager _gameManager;
+    [SerializeField] private GameObject _pauseMenu;
 
     void Start()
     {
@@ -50,5 +52,20 @@ public class UIManager : MonoBehaviour
             _gameOverText.text = "";
             yield return new WaitForSeconds(0.5f);
         }
+    }
+    
+    //method for resume play
+    public void ResumePlayOnClick()
+    {
+        if (Time.timeScale == 0)
+        {
+            _pauseMenu.gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+    //method for back to main menu
+    public void GoToMainMenuOnClick()
+    {
+        SceneManager.LoadScene(0);
     }
 }
