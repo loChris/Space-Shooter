@@ -18,15 +18,25 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        GetGameObjects();
+        UIText();
+    }
+
+    void UIText()
+    {
+        _scoreText.text = "Score: " + 0;
+        _highScoreText.text = "High-Score: " + PlayerPrefs.GetInt("HighScore", 0);
+        _gameOverText.gameObject.SetActive(false);
+        _deathScreenText.gameObject.SetActive(false);
+    }
+
+    void GetGameObjects()
+    {
         _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
         if (_gameManager == null)
         {
             Debug.LogError("game manager is null");
         }
-        _scoreText.text = "Score: " + 0;
-        _highScoreText.text = "Score: " + 0;
-        _gameOverText.gameObject.SetActive(false);
-        _deathScreenText.gameObject.SetActive(false);
     }
 
     public void UpdateScoreOnScreen(int playerScore)
@@ -34,13 +44,14 @@ public class UIManager : MonoBehaviour
         _scoreText.text = "Score: " + playerScore;
     }
     
-    //check for best score
     public void UpdateHighScore(int playerScore)
     {
         if (playerScore > _newHighScore)
+        {
             _newHighScore = playerScore;
-
-        _highScoreText.text = "High Score: " + _newHighScore;
+            PlayerPrefs.SetInt("HighScore", _newHighScore);
+            _highScoreText.text = "High Score: " + _newHighScore;
+        }
     }
 
     public void UpdateLives(float currentLives)
