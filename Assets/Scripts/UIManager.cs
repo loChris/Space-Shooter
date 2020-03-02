@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    private int _newHighScore;
     [SerializeField] private Text _scoreText;
+    [SerializeField] private Text _highScoreText;
     [SerializeField] private Text _gameOverText;
     [SerializeField] private GameObject _deathScreenText;
     [SerializeField] private Sprite[] _livesSprites;
@@ -22,6 +24,7 @@ public class UIManager : MonoBehaviour
             Debug.LogError("game manager is null");
         }
         _scoreText.text = "Score: " + 0;
+        _highScoreText.text = "Score: " + 0;
         _gameOverText.gameObject.SetActive(false);
         _deathScreenText.gameObject.SetActive(false);
     }
@@ -29,6 +32,15 @@ public class UIManager : MonoBehaviour
     public void UpdateScoreOnScreen(int playerScore)
     {
         _scoreText.text = "Score: " + playerScore;
+    }
+    
+    //check for best score
+    public void UpdateHighScore(int playerScore)
+    {
+        if (playerScore > _newHighScore)
+            _newHighScore = playerScore;
+
+        _highScoreText.text = "High Score: " + _newHighScore;
     }
 
     public void UpdateLives(float currentLives)

@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8a72e935-a56f-4eb3-b758-015b46eb47bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Space-Shooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Space-Shooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Pause_Menu_anim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Pause_Menu_anim.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Pause_Menu_panel.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Pause_Menu_panel.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Single_Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Single_Player.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +38,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Main_Menu/MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Spawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       </list>
     </option>
   </component>
@@ -100,7 +104,7 @@
       <workItem from="1582848523935" duration="2531000" />
       <workItem from="1583086211325" duration="1246000" />
       <workItem from="1583184971472" duration="2826000" />
-      <workItem from="1583188143477" duration="820000" />
+      <workItem from="1583188143477" duration="2617000" />
     </task>
     <servers />
   </component>

@@ -166,5 +166,6 @@ public class Player : MonoBehaviour
         _score += points;
         //commincate with the UI to update score
         _uiManager.UpdateScoreOnScreen(_score);
+        _uiManager.UpdateHighScore(_score);
     }
 }
